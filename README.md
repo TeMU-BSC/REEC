@@ -8,20 +8,20 @@ REEC Crawler is project to download clinical trial data from [Registro Español 
 1. Clone this repository:
 
 ```bash
-      git clone https://github.com/TeMU-BSC/REEC.git 
-      cd REEC
+git clone https://github.com/TeMU-BSC/REEC.git 
+cd REEC
 ```
 
 2. Create & activate virtual environment:
 
 ```bash
-      virtualenv .env
-      source .env/bin/activate
+virtualenv .env
+source .env/bin/activate
 ```
 
 3. Install requirements:
 ```bash
-      pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 After these steps, you should have everything up-to-date to start crawling data from REEC.
