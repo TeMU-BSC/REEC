@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Imports
-import reecrawler.getters as reec
+import reecapi.getters as reec
 import json
 import pymongo
 from pymongo import MongoClient
