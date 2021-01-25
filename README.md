@@ -8,7 +8,7 @@ REEC Crawler is project to download clinical trial data from [Registro Español 
 1. Clone this repository:
 
 ```bash
-      git clone 
+      git clone https://github.com/TeMU-BSC/REEC.git 
       cd REEC
 ```
 
