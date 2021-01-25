@@ -62,7 +62,20 @@ python reec_script.py --from_date "01-01-2021" --to_date "15-01-2021" --out "mon
 </details>
 
 
+## Structure of the records in MongoDB
+Each REEC API call to get details about the information of a record has the following fields:
+![Drag Racing](information_api_fields_image.PNG)
 
+Having that into account, we have built the structure of MongoDB records as follows:
+- **_id**: This is the clinical trial id number extracted from the REEC API.
+- **ti_es**: The title corresponds to the field *tituloCientifico*.
+- **ab_es**: The `abstract` is a string join between the fields:
+      - [*tituloCientifico*, *indicadionPublica*, *indicacionCientifica*, *criteriosInclusion*, *criteriosExclusion*, *variablesPrincipales*, *variablesSecundarias*, *objetivoPrincipal*, *objetivoSecundario*, *momentosPrincipales*, *momentosSecundarios*, *justificacion*]
+
+- **list_elem_not_found**: In case any of the record fields does not exist in the REEC database, a list containing the fields that do not exist in the record will appear here.
+- **num_elem_not_found**: This is the number of the record fields that does not exist in the REEC database.
+- **lang_ab**: Language of the abstract (in Spanish).
+- **lang_ti**: Language of the title (in Spanish)
 
 
 -----
