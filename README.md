@@ -1,4 +1,5 @@
 # REEC Crawler
+> It works with Python 3
 
 ## Introduction
 REEC Crawler is project to download clinical trial data from [Registro Español de Estudios Clínicos (REEC)](https://reec.aemps.es/reec/public/web.html) and save them into *.json files and MongoDB. This is a pretty simple version, and it does not deal with duplicates in your MongoDB collection, so if you have and oldest version of the same record, the previous one will be maintained in the collection.
