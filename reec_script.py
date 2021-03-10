@@ -48,12 +48,17 @@ def process_batch_reec_records(list_reec):
         # Count the "Not Founds" fields and specify them (put in an array or inside a key of the dict)
 
         dict_to_mongo["ti_es"] = tituloCientifico
-        dict_to_mongo["ab_es"] = '\n '.join([indicadionPublica, indicacionCientifica, 
-                                            criteriosInclusion, criteriosExclusion,
-                                            variablesPrincipales, variablesSecundarias,
-                                            objetivoPrincipal, objetivoSecundario,
-                                            momentosPrincipales, momentosSecundarios,
-                                            justificacion])
+        dict_to_mongo["ab_es"] = '\n '.join(["#INDICACION_PUBLICA", indicadionPublica,
+                                            "#INDICACION_CIENTIFICA", indicacionCientifica, 
+                                            "#CRITERIOS_INCLUSION", criteriosInclusion,
+                                            "#CRITERIOS_EXCLUSION", criteriosExclusion,
+                                            "#VARIABLES_PRINCIPALES", variablesPrincipales,
+                                            "#VARIABLES_SECUNDARIAS",variablesSecundarias,
+                                            "#OBJETIVO_PRINCIPAL",objetivoPrincipal,
+                                            "#OBJETIVO_SECUNDARIO", objetivoSecundario,
+                                            "#MOMENTOS_PRINCIPALES", momentosPrincipales, 
+                                            "#MOMENTOS_SECUNDARIOS", momentosSecundarios,
+                                            "#JUSTIFICACION", justificacion])
         # List of ELEMENTS NOT FOUND.
         dict_to_mongo["list_elem_not_found"] = res
         # Number of ELEMENTS NOT FOUND.
@@ -69,7 +74,7 @@ def process_batch_reec_records(list_reec):
 def save_dict_to_json_file(dest_file, list_dicts):
     output_file = open(dest_file, 'w', encoding='utf-8')
     for dic in list_dicts:
-        json.dump(dic, output_file)
+        output_file.write(unicode(json.dump(dic, output_file)))
         output_file.write("\n")
 
 # Save data to MongoDB
