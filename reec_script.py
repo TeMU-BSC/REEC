@@ -74,7 +74,7 @@ def process_batch_reec_records(list_reec):
 def save_dict_to_json_file(dest_file, list_dicts):
     output_file = open(dest_file, 'w', encoding='utf-8')
     for dic in list_dicts:
-        output_file.write(unicode(json.dump(dic, output_file)))
+        output_file.write(str(json.dump(dic, output_file, ensure_ascii=False)))
         output_file.write("\n")
 
 # Save data to MongoDB
